@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - My Awesome Store</title>
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <header>
+        <h1>Store Admin Panel</h1>
+        <button id="logoutButton" style="display:none;">Logout</button>
+    </header>
+
+    <main>
+        <section id="loginSection">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required value="admin">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required value="password123">
+                </div>
+                <button type="submit">Login</button>
+                <p id="loginError" class="error-message"></p>
+            </form>
+        </section>
+
+        <section id="dashboardSection" style="display:none;">
+            <h2>Product Management</h2>
+            <button id="showAddProductFormButton">Add New Product</button>
+            <div id="productFormContainer" style="display:none;">
+                <h3 id="formTitle">Add Product</h3>
+                <form id="productForm">
+                    <input type="hidden" id="productId" name="productId">
+                    <div><label for="productName">Name:</label><input type="text" id="productName" required></div>
+                    <div><label for="productPrice">Price:</label><input type="number" id="productPrice" step="0.01" required></div>
+                    <div><label for="productImage">Image URL:</label><input type="url" id="productImage" required placeholder="https://via.placeholder.com/150"></div>
+                    <div><label for="productDescription">Description:</label><textarea id="productDescription" rows="3" required></textarea></div>
+                    <button type="submit" id="saveProductButton">Save Product</button>
+                    <button type="button" id="cancelEditButton">Cancel</button>
+                    <p id="productFormError" class="error-message"></p>
+                </form>
+            </div>
+            <h3>Existing Products</h3>
+            <div id="adminProductList"><p>Loading products...</p></div>
+        </section>
+    </main>
+    <footer><p>© 2024 Store Admin</p></footer>
+    <script src="admin_script.js"></script>
+</body>
+</html>
